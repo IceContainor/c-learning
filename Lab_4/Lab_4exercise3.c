@@ -3,7 +3,7 @@
 int main(){
 
     int User, units, tens;
-    char *First_Number[8]={"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+    char *First_Number[10]={"","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
     char *Second_Number[10]={"  ","one","two","three","four","five","six","seven","eight","nine"};
 
     printf("Enter a number between 0 to 99:");
@@ -34,7 +34,7 @@ int main(){
     else if (User == 19)
         printf("Nineteen");
     else{
-        printf("%s %s", First_Number[tens-2], Second_Number[units]);
+        printf("%s %s", First_Number[tens], Second_Number[units]);
     }
 
     return 0;
