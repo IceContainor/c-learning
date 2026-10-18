@@ -5,14 +5,19 @@
 int main()
 {
     int options; ///声明
+    void line(void);///分割线
     void CalculateAreaRectangles();///函数1声明
     void ConvertSecondsToHoursMinutesSeconds(int x);///函数2声明
+    void PrintCircle();///函数3声明
     void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3);///函数4声明
     void ConvertNumberToWord(int a);///函数5声明
     ///void CompareDates(char Date1[], char Date2[], char Date3[]);///函数6声明
-    ///void ReverseDigits(int n);///函数7声明
+    void ReverseDigits(int n);///函数7声明
     void CheckRepeatedDigits(int n);///函数9声明
+    void ComputeCompoundInterest(int a, int b);///函数10声明
+    void is_prime(int n);///函数11声明
 
+    printf("<menu>———————————————————————————————————————————————————\n");
     printf("0. Exit\n");
     printf("1. CalculateAreaRectangles\n");
     printf("2. ConvertSecondsToHoursMinutesSeconds\n");
@@ -26,6 +31,7 @@ int main()
     printf("10. ComputeCompoundInterest\n");
     printf("11. CheckIfPrime\n");
     printf("12. LinkedListFileMemoryOperations\n\n");
+    line();
 
     while (1){         ///程序循环体
 
@@ -33,10 +39,11 @@ int main()
         scanf("%d", &options);
         printf("\n");
 
-        if (options==0){break;}                                                    ///option=0
+        if (options==0){break;}                                                   ///option=0
 
-        if (options==1){                                                                ///option =1
+        if (options==1){                                                               ///option =1
             CalculateAreaRectangles();
+            line();
         }
 
         if (options==2){                                                               ///option =2
@@ -44,27 +51,23 @@ int main()
             printf("Enter a number:");
             scanf("%d", &seconds);///Get times
             ConvertSecondsToHoursMinutesSeconds(seconds);
+            line();
         }
 
         if (options==3){                                                              ///option =3
-            int radius, form, feature;
-            printf("Enter the radius:");
-            scanf("%d", &radius);
-            printf("Choose a fill character(0 representing * and 1 representing #):");
-            scanf("%d", &form);
-            printf("Choose an indicator(0 representing hollow and 1 representing solid):");
-            scanf("%d", &feature);
-
+            PrintCircle();
+            line();
         }
 
-        if (options==4){                                                            ///option =4
+        if (options==4){                                                              ///option =4
             int x1, y1, x2, y2, x3, y3;
             printf("Enter 3 coordinates(Form as follows: x1 y1 x2 y2 x3 y3):");
             scanf("%d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3);///Get coordinates
             CalculateAreaTriangleWithUserInput(x1, y1, x2, y2, x3, y3);
+            line();
         }
 
-        if (options==5){                                                            ///option=5
+        if (options==5){                                                              ///option=5
             int input, count=1;
             printf("Enter a number:(between -999 and 999)\n");
             while (count==1){
@@ -75,33 +78,50 @@ int main()
                 else{printf("This number can't be used.Enter another number.\n");}
             }
             ConvertNumberToWord(input);
+            line();
         }
 
-        if (options==6){                                                            ///option=6
-
-        }
-
-        if (options==7){                                                            ///option=7
+        if (options==6){                                                              ///option=6
 
         }
 
-        if (options==8){                                                            ///option=8
+        if (options==7){                                                              ///option=7
+            int origin_num=0;
+            printf("Enter a number:");
+            scanf("%d", &origin_num);
+            printf("The origin number is %d", origin_num);
+            ReverseDigits(origin_num);
+            line();
+        }
+
+        if (options==8){                                                              ///option=8
 
         }
 
-        if (options==9){                                                            ///option=9
+        if (options==9){                                                              ///option=9
             int num;
             printf("Enter a number:");
             scanf("%d", &num);
             CheckRepeatedDigits(num);
+            line();
         }
 
         if (options==10){                                                            ///option=10
-
+            int funds=100, interest_rate, year;
+            printf("Enter initial interest rate: ");
+            scanf("%d", &interest_rate);
+            printf("Enter number of years: \n");
+            scanf("%d", &year);
+            ComputeCompoundInterest(interest_rate, year);
+            line();
         }
 
         if (options==11){                                                            ///option=11
-
+            int user;
+            printf("Enter a number:");
+            scanf("%d", &user);
+            is_prime(user);
+            line();
         }
 
         if (options==12){                                                            ///option=12
@@ -112,6 +132,8 @@ int main()
     printf("See you next time!\n");
     return 0;
 }
+
+void line(void){printf("————————————————————————————————————————————————————————\n");}
 
 void CalculateAreaRectangles(){                         ///函数1
     int length1, height1, area1;
@@ -145,12 +167,77 @@ void ConvertSecondsToHoursMinutesSeconds(int x){        ///函数2
     printf("%d seconds is equivalent to %d hours %d minutes %d seconds\n\n", x, h, m, s);///out put
 }
 
-void PrintCircle(int a, int b, int c){          ///函数3
+void PrintCircle(){        ///函数3
+    int radius, fill_char_code, is_solid;
 
+    printf("Enter radius: ");
+    scanf("%d", &radius);
+    printf("Enter fill character (0 for '*', 1 for '#'): ");
+    scanf("%d", &fill_char_code);
+    printf("Enter fill indicator (0 for hollow, 1 for solid): ");
+    scanf("%d", &is_solid);
 
+    // 确定填充字符
+    char fill_char = (fill_char_code == 0) ? '*' : '#';
 
+    // 1. 打印上半部分 (包括中间最长的一行)
+    // i 从 1 循环到 radius * 2
+    for (int i = 1; i <= radius * 2; i++) {
+        // 打印前导空格
+        for (int space = 0; space < radius * 2 - i; space++) {
+            printf(" ");
+        }
 
+        // 打印字符和内部的空格
+        for (int j = 1; j <= i; j++) {
+            if (is_solid == 1) {
+                // 实心：每个位置都打印字符
+                printf("%c", fill_char);
+            } else {
+                // 空心：只在第一个和最后一个位置打印字符
+                if (j == 1 || j == i) {
+                    printf("%c", fill_char);
+                } else {
+                    printf(" ");
+                }
+            }
+            // 字符之间加一个空格（这是题目示例要求的格式）
+            if (j < i) {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
 
+    // 2. 打印下半部分
+    // i 从 radius * 2 - 1 递减到 1
+    for (int i = radius * 2 - 1; i >= 1; i--) {
+        // 打印前导空格
+        for (int space = 0; space < radius * 2 - i; space++) {
+            printf(" ");
+        }
+
+        // 打印字符和内部的空格
+        for (int j = 1; j <= i; j++) {
+            if (is_solid == 1) {
+                // 实心
+                printf("%c", fill_char);
+            } else {
+                // 空心
+                if (j == 1 || j == i) {
+                    printf("%c", fill_char);
+                } else {
+                    printf(" ");
+                }
+            }
+            // 字符之间加一个空格
+            if (j < i) {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    printf("\n");
 }
 
 void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3){      ///函数4
@@ -203,8 +290,13 @@ void CompareDates(){      ///函数6
 
 }
 
-void ReverseDigits(){          ///函数7
-
+void ReverseDigits(int n){          ///函数7
+    int reversed=0;
+    while (n>0){
+        reversed = reversed * 10+ (n%10);
+        n/=10;
+    }
+    printf("The reverse number is %d\n\n", reversed);
 }
 
 void CheckRepeatedDigits(int n){        ///函数9
@@ -229,4 +321,35 @@ void CheckRepeatedDigits(int n){        ///函数9
     printf("\n");
     printf("Most repeated digit: %d(%d times)", max_num, max_num_times);
     printf("\n\n");
+}
+
+void ComputeCompoundInterest(int a, int b){     ///函数10
+    printf("Years");
+    int count = a+5;
+    for (a;a<count;a++){
+        printf("  %d%%      ", a);
+    }
+    printf("\n");
+    for (int i=1;i<6;i++){
+        printf("%d    ", i);
+        for (int j=count-5;j<count;j++){
+            float res = 100;
+            for (int k=1;k<i+1;k++){
+                res = res * (1+(j/100.0));
+            }
+            printf("%.2f    ", res);
+        }
+        printf("\n");
+    }
+    line();
+}
+
+void is_prime(int n){       ///函数11
+    for (int i=2;i*i<n;i++){
+        if (n%i==0){
+            printf("Not prime\n\n");
+            return;
+        }
+    }
+    printf("Is prime\n");
 }
