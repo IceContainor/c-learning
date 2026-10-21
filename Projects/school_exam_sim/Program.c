@@ -4,27 +4,27 @@
 
 int main()
 {
-    int options; ///ÉùÃ÷
-    void line(void);///·Ö¸îÏß
-    void CalculateAreaRectangles();///º¯Êı1ÉùÃ÷
-    void ConvertSecondsToHoursMinutesSeconds(int x);///º¯Êı2ÉùÃ÷
-    void PrintCircle();///º¯Êı3ÉùÃ÷
-    void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3);///º¯Êı4ÉùÃ÷
-    void ConvertNumberToWord(int a);///º¯Êı5ÉùÃ÷
-    ///void CompareDates(char Date1[], char Date2[], char Date3[]);///º¯Êı6ÉùÃ÷
-    void ReverseDigits(int n);///º¯Êı7ÉùÃ÷
-    void CheckRepeatedDigits(int n);///º¯Êı9ÉùÃ÷
-    void ComputeCompoundInterest(int a, int b);///º¯Êı10ÉùÃ÷
-    void is_prime(int n);///º¯Êı11ÉùÃ÷
+    int options; ///å£°æ˜
+    void line(void);///åˆ†å‰²çº¿
+    void CalculateAreaRectangles();///å‡½æ•°1å£°æ˜
+    void ConvertSecondsToHoursMinutesSeconds(int x);///å‡½æ•°2å£°æ˜
+    void PrintCircle();///å‡½æ•°3å£°æ˜
+    void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3);///å‡½æ•°4å£°æ˜
+    void ConvertNumberToWord(int a);///å‡½æ•°5å£°æ˜
+    ///void CompareDates(char Date1[], char Date2[], char Date3[]);///å‡½æ•°6å£°æ˜
+    void ReverseDigits(int n);///å‡½æ•°7å£°æ˜
+    void CheckRepeatedDigits(int n);///å‡½æ•°9å£°æ˜
+    void ComputeCompoundInterest(int a, int b);///å‡½æ•°10å£°æ˜
+    void is_prime(int n);///å‡½æ•°11å£°æ˜
 
-    printf("<menu>¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n");
+    printf("<menu>â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”\n");
     printf("0. Exit\n");
     printf("1. CalculateAreaRectangles\n");
     printf("2. ConvertSecondsToHoursMinutesSeconds\n");
     printf("3. PrintCircle\n");
     printf("4. CalculateAreaTriangleWithUserInput\n");
     printf("5. ConvertNumberToWord\n");
-    printf("6. CompareDates\n");                                                ///´òÓ¡²Ëµ¥
+    printf("6. CompareDates\n");                                                ///æ‰“å°èœå•
     printf("7. ReverseDigits\n");
     printf("8. FindHCF_LCM\n");
     printf("9. CheckRepeatedDigits\n");
@@ -33,9 +33,9 @@ int main()
     printf("12. LinkedListFileMemoryOperations\n\n");
     line();
 
-    while (1){         ///³ÌĞòÑ­»·Ìå
+    while (1){         ///ç¨‹åºå¾ªç¯ä½“
 
-        printf("What's your option?");                                          ///»ñÈ¡ÓÃ»§Ñ¡Ïî
+        printf("What's your option?");                                          ///è·å–ç”¨æˆ·é€‰é¡¹
         scanf("%d", &options);
         printf("\n");
 
@@ -82,7 +82,16 @@ int main()
         }
 
         if (options==6){                                                              ///option=6
-
+            int dd1=0, mm1=0, yyyy1=0;
+            printf("Enter first date:");
+            scanf("%d %d %d", &dd1, &mm1, &yyyy1);
+            int dd2=0, mm2=0, yyyy2=0;
+            printf("Enter second date:");
+            scanf("%d %d %d", &dd2, &mm2, &yyyy2);
+            int dd1=0, mm1=0, yyyy1=0;
+            printf("Enter third date:");
+            scanf("%d %d %d", &dd3, &mm3, &yyyy3);
+            
         }
 
         if (options==7){                                                              ///option=7
@@ -133,9 +142,9 @@ int main()
     return 0;
 }
 
-void line(void){printf("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n");}
+void line(void){printf("â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”\n");}
 
-void CalculateAreaRectangles(){                         ///º¯Êı1
+void CalculateAreaRectangles(){                         ///å‡½æ•°1
     int length1, height1, area1;
     int length2, height2, area2;
     int length3, height3, area3;
@@ -159,7 +168,7 @@ void CalculateAreaRectangles(){                         ///º¯Êı1
     printf("The area of rectangle 3 of length %d and height %d is %d\n\n", length3, height3, area3);///out put
 }
 
-void ConvertSecondsToHoursMinutesSeconds(int x){        ///º¯Êı2
+void ConvertSecondsToHoursMinutesSeconds(int x){        ///å‡½æ•°2
     int h, m, s;
     h =x / 3600;///compute the hours
     m = (x % 3600) / 60;///compute the minutes
@@ -167,7 +176,7 @@ void ConvertSecondsToHoursMinutesSeconds(int x){        ///º¯Êı2
     printf("%d seconds is equivalent to %d hours %d minutes %d seconds\n\n", x, h, m, s);///out put
 }
 
-void PrintCircle(){        ///º¯Êı3
+void PrintCircle(){        ///å‡½æ•°3
     int radius, fill_char_code, is_solid;
 
     printf("Enter radius: ");
@@ -177,31 +186,31 @@ void PrintCircle(){        ///º¯Êı3
     printf("Enter fill indicator (0 for hollow, 1 for solid): ");
     scanf("%d", &is_solid);
 
-    // È·¶¨Ìî³ä×Ö·û
+    // ç¡®å®šå¡«å……å­—ç¬¦
     char fill_char = (fill_char_code == 0) ? '*' : '#';
 
-    // 1. ´òÓ¡ÉÏ°ë²¿·Ö (°üÀ¨ÖĞ¼ä×î³¤µÄÒ»ĞĞ)
-    // i ´Ó 1 Ñ­»·µ½ radius * 2
+    // 1. æ‰“å°ä¸ŠåŠéƒ¨åˆ† (åŒ…æ‹¬ä¸­é—´æœ€é•¿çš„ä¸€è¡Œ)
+    // i ä» 1 å¾ªç¯åˆ° radius * 2
     for (int i = 1; i <= radius * 2; i++) {
-        // ´òÓ¡Ç°µ¼¿Õ¸ñ
+        // æ‰“å°å‰å¯¼ç©ºæ ¼
         for (int space = 0; space < radius * 2 - i; space++) {
             printf(" ");
         }
 
-        // ´òÓ¡×Ö·ûºÍÄÚ²¿µÄ¿Õ¸ñ
+        // æ‰“å°å­—ç¬¦å’Œå†…éƒ¨çš„ç©ºæ ¼
         for (int j = 1; j <= i; j++) {
             if (is_solid == 1) {
-                // ÊµĞÄ£ºÃ¿¸öÎ»ÖÃ¶¼´òÓ¡×Ö·û
+                // å®å¿ƒï¼šæ¯ä¸ªä½ç½®éƒ½æ‰“å°å­—ç¬¦
                 printf("%c", fill_char);
             } else {
-                // ¿ÕĞÄ£ºÖ»ÔÚµÚÒ»¸öºÍ×îºóÒ»¸öÎ»ÖÃ´òÓ¡×Ö·û
+                // ç©ºå¿ƒï¼šåªåœ¨ç¬¬ä¸€ä¸ªå’Œæœ€åä¸€ä¸ªä½ç½®æ‰“å°å­—ç¬¦
                 if (j == 1 || j == i) {
                     printf("%c", fill_char);
                 } else {
                     printf(" ");
                 }
             }
-            // ×Ö·ûÖ®¼ä¼ÓÒ»¸ö¿Õ¸ñ£¨ÕâÊÇÌâÄ¿Ê¾ÀıÒªÇóµÄ¸ñÊ½£©
+            // å­—ç¬¦ä¹‹é—´åŠ ä¸€ä¸ªç©ºæ ¼ï¼ˆè¿™æ˜¯é¢˜ç›®ç¤ºä¾‹è¦æ±‚çš„æ ¼å¼ï¼‰
             if (j < i) {
                 printf(" ");
             }
@@ -209,28 +218,28 @@ void PrintCircle(){        ///º¯Êı3
         printf("\n");
     }
 
-    // 2. ´òÓ¡ÏÂ°ë²¿·Ö
-    // i ´Ó radius * 2 - 1 µİ¼õµ½ 1
+    // 2. æ‰“å°ä¸‹åŠéƒ¨åˆ†
+    // i ä» radius * 2 - 1 é€’å‡åˆ° 1
     for (int i = radius * 2 - 1; i >= 1; i--) {
-        // ´òÓ¡Ç°µ¼¿Õ¸ñ
+        // æ‰“å°å‰å¯¼ç©ºæ ¼
         for (int space = 0; space < radius * 2 - i; space++) {
             printf(" ");
         }
 
-        // ´òÓ¡×Ö·ûºÍÄÚ²¿µÄ¿Õ¸ñ
+        // æ‰“å°å­—ç¬¦å’Œå†…éƒ¨çš„ç©ºæ ¼
         for (int j = 1; j <= i; j++) {
             if (is_solid == 1) {
-                // ÊµĞÄ
+                // å®å¿ƒ
                 printf("%c", fill_char);
             } else {
-                // ¿ÕĞÄ
+                // ç©ºå¿ƒ
                 if (j == 1 || j == i) {
                     printf("%c", fill_char);
                 } else {
                     printf(" ");
                 }
             }
-            // ×Ö·ûÖ®¼ä¼ÓÒ»¸ö¿Õ¸ñ
+            // å­—ç¬¦ä¹‹é—´åŠ ä¸€ä¸ªç©ºæ ¼
             if (j < i) {
                 printf(" ");
             }
@@ -240,13 +249,13 @@ void PrintCircle(){        ///º¯Êı3
     printf("\n");
 }
 
-void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3){      ///º¯Êı4
+void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3){      ///å‡½æ•°4
     float area;
     area = abs(x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2))/2.0;///Calculate
     printf("The area of the triangle is: %f\n\n", area);///Output
 }
 
-void Lab4_exercise3(int User){      ///º¯Êı5µÄ¸¨Öúº¯Êı
+void Lab4_exercise3(int User){      ///å‡½æ•°5çš„è¾…åŠ©å‡½æ•°
     char *Second_Number[10]={"","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
     char *Third_Number[10]={"  ","one","two","three","four","five","six","seven","eight","nine"};
     int units = User % 10;
@@ -275,7 +284,7 @@ void Lab4_exercise3(int User){      ///º¯Êı5µÄ¸¨Öúº¯Êı
         printf("%s %s", Second_Number[tens], Third_Number[units]);
     }
 }
-void ConvertNumberToWord(int a){        ///º¯Êı5
+void ConvertNumberToWord(int a){        ///å‡½æ•°5
     int first_number = a/100, User = a%100, second_number = (a%100)/10, third_number = a %10;
     if (a==0){printf("zero");}
     char *first_N[10]={"", "one ", "two ", "three ", "four ", "five ", "six ", "seven ", "eight ", "nine "};
@@ -286,11 +295,11 @@ void ConvertNumberToWord(int a){        ///º¯Êı5
     printf("\n");
 }
 
-void CompareDates(){      ///º¯Êı6
+void CompareDates(){      ///å‡½æ•°6
 
 }
 
-void ReverseDigits(int n){          ///º¯Êı7
+void ReverseDigits(int n){          ///å‡½æ•°7
     int reversed=0;
     while (n>0){
         reversed = reversed * 10+ (n%10);
@@ -299,7 +308,7 @@ void ReverseDigits(int n){          ///º¯Êı7
     printf("The reverse number is %d\n\n", reversed);
 }
 
-void CheckRepeatedDigits(int n){        ///º¯Êı9
+void CheckRepeatedDigits(int n){        ///å‡½æ•°9
     int num_set[10]={0};
     while (n!=0){
         num_set[n%10]++;
@@ -323,7 +332,7 @@ void CheckRepeatedDigits(int n){        ///º¯Êı9
     printf("\n\n");
 }
 
-void ComputeCompoundInterest(int a, int b){     ///º¯Êı10
+void ComputeCompoundInterest(int a, int b){     ///å‡½æ•°10
     printf("Years");
     int count = a+5;
     for (a;a<count;a++){
@@ -344,7 +353,7 @@ void ComputeCompoundInterest(int a, int b){     ///º¯Êı10
     line();
 }
 
-void is_prime(int n){       ///º¯Êı11
+void is_prime(int n){       ///å‡½æ•°11
     for (int i=2;i*i<n;i++){
         if (n%i==0){
             printf("Not prime\n\n");
