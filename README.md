@@ -22,7 +22,9 @@
 
 - `06-Strings/` —— 字符串
 
-- `07-Structure/` —— 结构
+- `07-Structure,Union and Enum/` —— 结构&联合&枚举
+
+- `08-Pointer/` —— 指针
 
 - `exercises/` —— 小练习
 
@@ -44,19 +46,8 @@
 
 - \[x] 字符串
 
-- \[x] 结构
+- \[x] 结构&联合&枚举
+
+- \[x]指针
 
 &#x20;
-
-
-
-## 常用命令
-
-
-
-```bash
-
-gcc main.c -o main   # 编译
-
-./main               # 运行
-
