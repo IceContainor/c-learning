@@ -22,7 +22,9 @@
 
 - `06-Strings/` —— 字符串
 
-- `07-Structure/` —— 结构
+- `07-Structure,Union and Enum/` —— 结构&联合&枚举
+
+- `08-Pointer/` —— 指针
 
 - `exercises/` —— 小练习
 
