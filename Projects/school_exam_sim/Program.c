@@ -11,13 +11,14 @@ int main()
     void PrintCircle();///函数3声明
     void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3);///函数4声明
     void ConvertNumberToWord(int a);///函数5声明
-    ///void CompareDates(char Date1[], char Date2[], char Date3[]);///函数6声明
+    ///void CompareDates(int );///函数6声明
     void ReverseDigits(int n);///函数7声明
+    int FindHCF_LCM(int a, int b);///函数8声明
     void CheckRepeatedDigits(int n);///函数9声明
     void ComputeCompoundInterest(int a, int b);///函数10声明
     void is_prime(int n);///函数11声明
 
-    printf("<menu>———————————————————————————————————————————————————\n");
+    printf("<menu>_____________________________________________________________________________________________\n");
     printf("0. Exit\n");
     printf("1. CalculateAreaRectangles\n");
     printf("2. ConvertSecondsToHoursMinutesSeconds\n");
@@ -39,7 +40,9 @@ int main()
         scanf("%d", &options);
         printf("\n");
 
-        if (options==0){break;}                                                   ///option=0
+        if (options==0){                                                               ///option = 0
+            break;
+        }                                                   ///option=0
 
         if (options==1){                                                               ///option =1
             CalculateAreaRectangles();
@@ -88,10 +91,10 @@ int main()
             int dd2=0, mm2=0, yyyy2=0;
             printf("Enter second date:");
             scanf("%d %d %d", &dd2, &mm2, &yyyy2);
-            int dd1=0, mm1=0, yyyy1=0;
+            int dd3=0, mm3=0, yyyy3=0;
             printf("Enter third date:");
             scanf("%d %d %d", &dd3, &mm3, &yyyy3);
-            
+
         }
 
         if (options==7){                                                              ///option=7
@@ -104,7 +107,14 @@ int main()
         }
 
         if (options==8){                                                              ///option=8
-
+            int a, b, c, a_b, LCM;
+            printf("Enter three numbers:");
+            scanf("%d %d %d", a, b, c);
+            a_b = FindHCF_LCM(a, b);
+            if (a_b==0) {a_b=1;}
+            LCM = FindHCF_LCM(a_b, c);
+            printf("The LCM of three numbers is %d\n\n", LCM);
+            line();
         }
 
         if (options==9){                                                              ///option=9
@@ -142,7 +152,7 @@ int main()
     return 0;
 }
 
-void line(void){printf("————————————————————————————————————————————————————————\n");}
+void line(void){printf("___________________________________________________________________________________________________\n");}     ///换行
 
 void CalculateAreaRectangles(){                         ///函数1
     int length1, height1, area1;
@@ -306,6 +316,42 @@ void ReverseDigits(int n){          ///函数7
         n/=10;
     }
     printf("The reverse number is %d\n\n", reversed);
+}
+
+int FindHCF_LCM(int a, int b){     ///函数8
+    int LCM, max, temp, rest=1;
+    if (a>b){
+        while (rest != 0){
+            rest = a%b;
+            temp = b;
+            a = temp;
+            if (rest != 0){
+                b = rest;
+            }
+            else {
+                break;
+            }
+        }
+        LCM = b;
+    }
+    else if (a==b){
+        LCM = a;
+    }
+    else {
+        while (rest != 0){
+            rest = b%a;
+            temp = a;
+            b = temp;
+            if (rest != 0){
+                a = rest;
+            }
+            else {
+                break;
+            }
+        }
+        LCM = a;
+    }
+    return LCM;
 }
 
 void CheckRepeatedDigits(int n){        ///函数9
