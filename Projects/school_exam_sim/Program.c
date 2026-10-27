@@ -11,7 +11,7 @@ int main()
     void PrintCircle();///函数3声明
     void CalculateAreaTriangleWithUserInput(int x1, int y1, int x2, int y2, int x3, int y3);///函数4声明
     void ConvertNumberToWord(int a);///函数5声明
-    ///void CompareDates(int );///函数6声明
+    int CorrectFormat(int y, int m, int d);///函数6声明
     void ReverseDigits(int n);///函数7声明
     int FindHCF_LCM(int a, int b);///函数8声明
     void CheckRepeatedDigits(int n);///函数9声明
@@ -85,16 +85,43 @@ int main()
         }
 
         if (options==6){                                                              ///option=6
+            int count=0;
             int dd1=0, mm1=0, yyyy1=0;
-            printf("Enter first date:");
-            scanf("%d %d %d", &dd1, &mm1, &yyyy1);
-            int dd2=0, mm2=0, yyyy2=0;
-            printf("Enter second date:");
-            scanf("%d %d %d", &dd2, &mm2, &yyyy2);
-            int dd3=0, mm3=0, yyyy3=0;
-            printf("Enter third date:");
-            scanf("%d %d %d", &dd3, &mm3, &yyyy3);
+            while (count !=1){
+                printf("Enter first date:");
+                scanf("%d %d %d", &dd1, &mm1, &yyyy1);
+                count = CorrectFormat(yyyy1, mm1, dd1);
+            }
 
+            count = 0;
+            int dd2=0, mm2=0, yyyy2=0;
+            while (count !=1){
+                printf("Enter second date:");
+                scanf("%d %d %d", &dd2, &mm2, &yyyy2);
+                count = CorrectFormat(yyyy2, mm2, dd2);
+            }
+
+            count = 0;
+            int dd3=0, mm3=0, yyyy3=0;
+            while (count !=1){
+                printf("Enter first date:");
+                scanf("%d %d %d", &dd3, &mm3, &yyyy3);
+                count = CorrectFormat(yyyy3, mm3, dd3);
+            }
+
+            int yyyy=yyyy1, mm=mm1, dd=dd1;
+            if ( yyyy2>yyyy || ( yyyy2==yyyy && mm2>mm ) || ( yyyy2==yyyy && mm2==mm && dd2 > dd)){
+                yyyy=yyyy2;
+                mm=mm2;
+                dd=dd2;
+            }
+            if ( yyyy3>yyyy || ( yyyy3==yyyy && mm3>mm ) || ( yyyy3==yyyy && mm3==mm && dd3 > dd)){
+                yyyy=yyyy3;
+                mm=mm3;
+                dd=dd3;
+            }
+            printf("The latest date is : %d %d %d\n\n", yyyy, mm, dd);
+            line();
         }
 
         if (options==7){                                                              ///option=7
@@ -305,8 +332,39 @@ void ConvertNumberToWord(int a){        ///函数5
     printf("\n");
 }
 
-void CompareDates(){      ///函数6
-
+int CorrectFormat(int y, int m, int d){     ///函数6
+    int count = 0;
+    if (y%4==0){    ///是闰年
+        if (m==2){  ///二月份
+            if (d>0&&d<30){count = 1;}
+            else {printf("Please Enter an available date\n");}
+        }
+        else if (m==1||m==3||m==5||m==7||m==8||m==10||m==12){    ///大月
+            if (d>0&&d<32){count = 1;}
+            else {printf("Please Enter an available date\n");}
+        }
+        else if (m==4||m==6||m==9||m==11){   ///小月
+            if (d>0&&d<31){count = 1;}
+            else {printf("Please Enter an available date\n");}
+        }
+        else {printf("Please Enter an available date\n");}
+    }
+    else {  ///不是闰年
+        if (m==2){  ///二月份
+            if (d>0&&d<29){count = 1;}
+            else {printf("Please Enter an available date\n");}
+        }
+        else if (m==1||m==3||m==5||m==7||m==8||m==10||m==12){    ///大月
+            if (d>0&&d<32){count = 1;}
+            else {printf("Please Enter an available date\n");}
+        }
+        else if (m==4||m==6||m==9||m==11){   ///小月
+            if (d>0&&d<31){count = 1;}
+            else {printf("Please Enter an available date\n");}
+        }
+        else {printf("Please Enter an available date\n");}
+    }
+    return count;
 }
 
 void ReverseDigits(int n){          ///函数7
