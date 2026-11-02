@@ -44,12 +44,12 @@ int main()
             break;
         }                                                   ///option=0
 
-        if (options==1){                                                               ///option =1
+        else if (options==1){                                                               ///option =1
             CalculateAreaRectangles();
             line();
         }
 
-        if (options==2){                                                               ///option =2
+        else if (options==2){                                                               ///option =2
             int seconds;
             printf("Enter a number:");
             scanf("%d", &seconds);///Get times
@@ -57,12 +57,12 @@ int main()
             line();
         }
 
-        if (options==3){                                                              ///option =3
+        else if (options==3){                                                              ///option =3
             PrintCircle();
             line();
         }
 
-        if (options==4){                                                              ///option =4
+        else if (options==4){                                                              ///option =4
             int x1, y1, x2, y2, x3, y3;
             printf("Enter 3 coordinates(Form as follows: x1 y1 x2 y2 x3 y3):");
             scanf("%d %d %d %d %d %d", &x1, &y1, &x2, &y2, &x3, &y3);///Get coordinates
@@ -70,7 +70,7 @@ int main()
             line();
         }
 
-        if (options==5){                                                              ///option=5
+        else if (options==5){                                                              ///option=5
             int input, count=1;
             printf("Enter a number:(between -999 and 999)\n");
             while (count==1){
@@ -84,7 +84,7 @@ int main()
             line();
         }
 
-        if (options==6){                                                              ///option=6
+        else if (options==6){                                                              ///option=6
             int count=0;
             int dd1=0, mm1=0, yyyy1=0;
             while (count !=1){
@@ -124,7 +124,7 @@ int main()
             line();
         }
 
-        if (options==7){                                                              ///option=7
+        else if (options==7){                                                              ///option=7
             int origin_num=0;
             printf("Enter a number:");
             scanf("%d", &origin_num);
@@ -133,7 +133,7 @@ int main()
             line();
         }
 
-        if (options==8){                                                              ///option=8
+        else if (options==8){                                                              ///option=8
             int a, b, c, a_b, LCM;
             printf("Enter three numbers:");
             scanf("%d %d %d", a, b, c);
@@ -144,7 +144,7 @@ int main()
             line();
         }
 
-        if (options==9){                                                              ///option=9
+        else if (options==9){                                                              ///option=9
             int num;
             printf("Enter a number:");
             scanf("%d", &num);
@@ -152,7 +152,7 @@ int main()
             line();
         }
 
-        if (options==10){                                                            ///option=10
+        else if (options==10){                                                            ///option=10
             int funds=100, interest_rate, year;
             printf("Enter initial interest rate: ");
             scanf("%d", &interest_rate);
@@ -162,7 +162,7 @@ int main()
             line();
         }
 
-        if (options==11){                                                            ///option=11
+        else if (options==11){                                                            ///option=11
             int user;
             printf("Enter a number:");
             scanf("%d", &user);
@@ -170,9 +170,11 @@ int main()
             line();
         }
 
-        if (options==12){                                                            ///option=12
+        else if (options==12){                                                            ///option=12
 
         }
+        
+        else {printf("Please enter a valid number!");}
 
     }
     printf("See you next time!\n");
